@@ -2,7 +2,7 @@ abstract class shapes {
   //global variables
   float Xposition,Yposition,Width,Height;
   color Colour;
-  
+  float XMovement,YMovement;
   shapes(float Xposition, float Yposition, float Width, float Height, color Colour) {
     this.Xposition = Xposition;
     this.Yposition = Yposition;
