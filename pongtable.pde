@@ -7,6 +7,7 @@ class pongTable extends rectangles{
   }//end pongTable
   //
   void draw() {
+    noStroke();
     fill(Colour);
     rect(Xposition,Yposition,Width,Height);
     //
