@@ -33,7 +33,8 @@ void mousePressed() {
 }//end mousepressed
 //
 void keyPressed() {
-  
+  if ( key==CODED & keyCode==UP) ;
+  if ( key==CODED & keyCode==DOWN) ;
 }//end keypressed
 //
 void keyReleased() {

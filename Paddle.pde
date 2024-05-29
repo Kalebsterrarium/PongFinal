@@ -1,12 +1,14 @@
 class Paddles extends rectangles {
- 
+ float PongTableMiddle;
   Paddles(float Xposition, float Yposition, float Width, float Height, color Colour) {
      super(Xposition,Yposition,Width,Height,Colour);
   }
   //
   void draw() {
     fill(Colour);
+    
     rect(Xposition,Yposition,Width,Height);
+  
   }//end draw
   //
    color colours() {
