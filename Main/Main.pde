@@ -15,8 +15,8 @@ void setup() {
    LeftNet.updateSetup(PongTable.Height,0,0);
    RightNet.updateSetup(PongTable.Height,0,0);
   PongTable.updateSetup(appHeight*1/10,appHeight*9/10,appWidth*1/2);
-  LeftPaddle.updateSetup(PongTable.CenterLineX,3,0);
-  RightPaddle.updateSetup(PongTable.CenterLineX,3,0);
+  LeftPaddle.updateSetup(PongTable.CenterlineX,3,0);
+  RightPaddle.updateSetup(PongTable.CenterlineX,3,0);
   Shape.add(PongTable);
   Shape.add(LeftNet);
    Shape.add(RightNet);
