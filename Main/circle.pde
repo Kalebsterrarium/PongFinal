@@ -8,7 +8,9 @@ abstract class circles extends shapes {
   //
   abstract color colours();
   //
-  abstract void updateSetup(float vari1, float vari2, float vari3);
+  abstract void updateSetup(float vari1, float vari2, float vari3, float vari4);
   //
   abstract void keyPressed();
+  //
+   abstract void keyReleased();
 }//end circles class

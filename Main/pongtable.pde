@@ -21,11 +21,13 @@ class pongTable extends rectangles{
     return c;
   }//end colours
   //
-  void updateSetup(float CLYT,float CLYB, float CLX) {
+  void updateSetup(float CLYT,float CLYB, float CLX, float vari4) {
     CenterlineY_Top = CLYT;
     CenterlineY_Bottom = CLYB;
     CenterlineX = CLX;
   }//end updateSetup
   //
   void keyPressed() {}
+  //
+  void keyReleased() {}
 }//end pongTable class
