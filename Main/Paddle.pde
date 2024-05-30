@@ -24,7 +24,9 @@ class Paddles extends rectangles {
   void paddlemove() {
     if(Xposition > PongTableMiddle) {
       if(Up[0] == true) {
+        println("moving");
       Yposition-=YMovement;
+      println(YMovement);
       }
     } else {
       if(Up[1] == true) {

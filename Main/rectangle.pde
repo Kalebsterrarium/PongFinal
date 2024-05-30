@@ -1,6 +1,6 @@
-abstract class circles extends shapes {
+abstract class rectangles extends shapes {
   
-  circles(float Xposition, float Yposition, float Width, float Height, color Colour) {
+  rectangles(float Xposition, float Yposition, float Width, float Height, color Colour) {
     super(Xposition,Yposition,Width,Height,Colour);
   }//end circles
   //
@@ -11,4 +11,4 @@ abstract class circles extends shapes {
   abstract void updateSetup(float vari1, float vari2, float vari3);
   //
   abstract void keyPressed();
-}//end circles class
+}//end rectangles class

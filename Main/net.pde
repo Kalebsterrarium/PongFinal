@@ -38,4 +38,6 @@ class Net extends rectangles {
       }
    
  }//end lines
+ //
+  void keyPressed() {}
 }// end Net class

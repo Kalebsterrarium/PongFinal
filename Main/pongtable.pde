@@ -26,5 +26,6 @@ class pongTable extends rectangles{
     CenterlineY_Bottom = CLYB;
     CenterlineX = CLX;
   }//end updateSetup
-  
+  //
+  void keyPressed() {}
 }//end pongTable class
