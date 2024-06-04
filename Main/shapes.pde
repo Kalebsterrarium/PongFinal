@@ -16,7 +16,7 @@ abstract class shapes {
   //
   abstract color colours();
   //
-  abstract void updateSetup(float vari1, float vari2, float vari3,float vari4);
+  abstract void updateSetup(float vari1, float vari2, float vari3,float vari4, float vari5, float vari6,float vari7);
   //
   abstract void keyPressed();
   //

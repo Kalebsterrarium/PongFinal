@@ -21,7 +21,7 @@ class pongTable extends rectangles{
     return c;
   }//end colours
   //
-  void updateSetup(float CLYT,float CLYB, float CLX, float vari4) {
+  void updateSetup(float CLYT,float CLYB, float CLX, float vari4,float vari5, float vari6,float vari7) {
     CenterlineY_Top = CLYT;
     CenterlineY_Bottom = CLYB;
     CenterlineX = CLX;

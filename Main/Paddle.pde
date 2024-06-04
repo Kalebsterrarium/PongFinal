@@ -22,7 +22,7 @@ class Paddles extends rectangles {
     return c;
   }//end colours
   //
-  void updateSetup(float PTM, float MY, float TT, float TB) {
+  void updateSetup(float PTM, float MY, float TT, float TB,float vari5, float vari6,float vari7) {
     PongTableMiddle = PTM;
     YMovement= MY;
    

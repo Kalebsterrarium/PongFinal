@@ -13,12 +13,12 @@ void setup() {
    Paddles LeftPaddle = new Paddles(LeftNet.Xposition + LeftNet.Width, appHeight/2 - ballDiameter*5/2 ,ballDiameter*1/2, ballDiameter*5, color(#00FF00));
    Paddles RightPaddle = new Paddles(RightNet.Xposition - ballDiameter*1/2, appHeight/2 - ballDiameter*5/2 ,ballDiameter*1/2, ballDiameter*5, color(#00FF00));
    balls PongBall = new balls(float(appWidth/2),float(appHeight/2),ballDiameter,ballDiameter,color(#FF0000));
-   LeftNet.updateSetup(PongTable.Height,0,0,0);
-   RightNet.updateSetup(PongTable.Height,0,0,0);
-  PongTable.updateSetup(appHeight*1/10,appHeight*9/10,appWidth*1/2,0);
-  LeftPaddle.updateSetup(PongTable.CenterlineX,3,PongTable.CenterlineY_Top,PongTable.CenterlineY_Bottom);
-  RightPaddle.updateSetup(PongTable.CenterlineX,3,PongTable.CenterlineY_Top,PongTable.CenterlineY_Bottom);
-  PongBall.updateSetup(PongTable.CenterlineY_Top,PongTable.CenterlineY_Bottom,0,0);
+   LeftNet.updateSetup(PongTable.Height,0,0,0,0,0,0);
+   RightNet.updateSetup(PongTable.Height,0,0,0,0,0,0);
+  PongTable.updateSetup(appHeight*1/10,appHeight*9/10,appWidth*1/2,0,0,0,0);
+  LeftPaddle.updateSetup(PongTable.CenterlineX,3,PongTable.CenterlineY_Top,PongTable.CenterlineY_Bottom,0,0,0);
+  RightPaddle.updateSetup(PongTable.CenterlineX,3,PongTable.CenterlineY_Top,PongTable.CenterlineY_Bottom,0,0,0);
+  PongBall.updateSetup(PongTable.CenterlineY_Top,PongTable.CenterlineY_Bottom,0,0,0,0,0);
   Shape.add(PongTable);
   Shape.add(LeftNet);
    Shape.add(RightNet);

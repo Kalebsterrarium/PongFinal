@@ -1,6 +1,7 @@
 class balls extends circles {
   float Xmovement,Ymovement;
   float TableTop,TableBottom,TableMiddle;
+  float LeftPaddleTop,LeftPaddleBottom,RightPaddleTop,RightPaddleBottom;
   balls(float Xposition, float Yposition, float Width, float Height, color Colour) {
     super(Xposition,Yposition,Width,Height,Colour);
   }//end balls
@@ -16,10 +17,15 @@ class balls extends circles {
     return c;
   }//end colours
   //
-  void updateSetup(float TT,float TB, float TM, float vari4) {
+  void updateSetup(float TT,float TB, float TM, float LPT, float LPB,float RPT, float RPB) {
     TableTop=TT;
     TableBottom=TB;
     TableMiddle=TM;
+    //
+    LeftPaddleTop=LPT;
+    LeftPaddleBottom=LPB;
+    RightPaddleTop=RPT;
+    RightPaddleBottom=RPB;
     //
      Xmovement+=xdirection();
    Ymovement+=ydirection();
@@ -64,13 +70,14 @@ class balls extends circles {
   }//end ydirection
   //
   void bounce() {
-    if(Yposition - Width/2 <= TableTop) {
+    if(Yposition - Width/2 <= TableTop || Yposition + Width/2 >= TableBottom) {
       Ymovement*=-1;
     }
     
-    if(Yposition + Width/2 >= TableBottom) {
-      Ymovement*=-1;
+    if() {
+      
     }
+    
   }//end bounce
   //
   void keyPressed() {
