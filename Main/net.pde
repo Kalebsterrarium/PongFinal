@@ -17,7 +17,7 @@ class Net extends rectangles {
     return c;
   }
   //
-  void updateSetup(float PTH,float vari2, float vari3, float vari4,float vari5, float vari6,float vari7) {
+  void updateSetup(float PTH,float vari2, float vari3, float vari4,float vari5, float vari6,float vari7, float vari8,float vari9, float vari10, float vari11) {
     PongTableHeight=PTH;
    
   }//end updateSetup

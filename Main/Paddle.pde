@@ -22,7 +22,7 @@ class Paddles extends rectangles {
     return c;
   }//end colours
   //
-  void updateSetup(float PTM, float MY, float TT, float TB,float vari5, float vari6,float vari7) {
+  void updateSetup(float PTM, float MY, float TT, float TB,float vari5, float vari6,float vari7, float vari8,float vari9, float vari10, float vari11) {
     PongTableMiddle = PTM;
     YMovement= MY;
    
@@ -31,8 +31,6 @@ class Paddles extends rectangles {
   }//end updatesetup
   void paddlemove() {
     if(Xposition > PongTableMiddle) {
-      println(PaddleTop);
-      println(TableTop);
       if(Up[0] == true) {
       Yposition-=YMovement;
       }

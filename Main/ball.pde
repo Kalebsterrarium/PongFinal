@@ -2,6 +2,7 @@ class balls extends circles {
   float Xmovement,Ymovement;
   float TableTop,TableBottom,TableMiddle;
   float LeftPaddleTop,LeftPaddleBottom,RightPaddleTop,RightPaddleBottom;
+  float PongTableLeft, PongTableRight;
   balls(float Xposition, float Yposition, float Width, float Height, color Colour) {
     super(Xposition,Yposition,Width,Height,Colour);
   }//end balls
@@ -9,7 +10,17 @@ class balls extends circles {
   void draw() {
     fill(Colour);
     ellipse(Xposition,Yposition,Width,Height);
-    move();
+    println(RightEdge);
+    
+   if ( BallStop==false && ( Xposition>LeftEdge && Xposition<RightEdge ) ) { 
+      move(); 
+    } else if ( Xposition<=LeftEdge ) { 
+      Xposition = PongTableLeft+Width;
+      BallStop=true;
+    } else if ( Xposition>=RightEdge ) {
+      Xposition = PongTableRight-Width; 
+      BallStop=true;
+    }
   }//end draw
   //
   color colours() {
@@ -17,7 +28,7 @@ class balls extends circles {
     return c;
   }//end colours
   //
-  void updateSetup(float TT,float TB, float TM, float LPT, float LPB,float RPT, float RPB) {
+  void updateSetup(float TT,float TB, float TM, float LPT, float LPB,float RPT, float RPB,float EL, float RE, float PTL , float PTR) {
     TableTop=TT;
     TableBottom=TB;
     TableMiddle=TM;
@@ -27,8 +38,16 @@ class balls extends circles {
     RightPaddleTop=RPT;
     RightPaddleBottom=RPB;
     //
+    LeftEdge = EL;
+    RightEdge = RE;
+    //
+      PongTableLeft = PTL;
+    PongTableRight = PTR;
+    //
      Xmovement+=xdirection();
    Ymovement+=ydirection();
+   //
+   BallStop=false;
   }//end updateSetup
   //
  void move() {
@@ -74,10 +93,12 @@ class balls extends circles {
       Ymovement*=-1;
     }
     
-    if() {
-      
+    if (Xposition < TableMiddle*1/2 && Xposition < LeftEdge+(Width*1/2) ) {
+      if ( Yposition > LeftPaddleTop && Yposition < LeftPaddleBottom ) Xmovement *= -1;
     }
-    
+    if (Xposition > TableMiddle*3/2 && Xposition > RightEdge-(Width*1/2)) {
+      if ( Yposition > RightPaddleTop && Yposition < RightPaddleBottom ) Xmovement *= -1;
+    }
   }//end bounce
   //
   void keyPressed() {
