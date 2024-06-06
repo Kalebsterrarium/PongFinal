@@ -27,11 +27,13 @@ class balls extends circles {
     }
     println(timer);
     if (BallStop == true && timer < 100) {
-      
-      if(timer == 99) {
-        println("reset");
       Xposition = displayWidth/2;
       Yposition = displayHeight/2;
+      Xmovement=0;
+      Ymovement=0;
+      if(timer == 99) {
+        println("reset");
+      
       Xmovement=xdirection();
    Ymovement=ydirection();
       BallStop = false;
@@ -118,6 +120,10 @@ class balls extends circles {
       if ( Yposition > RightPaddleTop && Yposition < RightPaddleBottom ) Xmovement *= -1;
     }
   }//end bounce
+  //
+  void Ballanimation() {
+    
+  }//end Ballanimation
   //
   void keyPressed() {
   }//end keyPressed
