@@ -1,8 +1,12 @@
 class scoreBoard extends rectangles {
-  
+   PFont font;
+  String score = "0";
   
   scoreBoard(float Xposition, float Yposition, float Width, float Height, color Colour) {
     super(Xposition,Yposition,Width,Height,Colour);
+   font = createFont("Calibri",20);
+    textAlign(CENTER,CENTER);
+    textFont(font,displayHeight);
   }//end scoreBoard
   
   
@@ -17,7 +21,7 @@ class scoreBoard extends rectangles {
   }//end updateSetup
   //
   void draw() {
-    
+    text(score,Xposition,Yposition,Width,Height);
   }//end draw
   //
   void keyPressed() {

@@ -13,6 +13,8 @@ void setup() {
    Paddles LeftPaddle = new Paddles(LeftNet.Xposition + LeftNet.Width, appHeight/2 - ballDiameter*5/2 ,ballDiameter*1/2, ballDiameter*5, color(#00FF00));
    Paddles RightPaddle = new Paddles(RightNet.Xposition - ballDiameter*1/2, appHeight/2 - ballDiameter*5/2 ,ballDiameter*1/2, ballDiameter*5, color(#00FF00));
    balls PongBall = new balls(float(appWidth/2),float(appHeight/2),ballDiameter,ballDiameter,color(#FF0000));
+   scoreBoard Player1ScoreBoard = new scoreBoard(appWidth*0,appHeight*0,);
+   scoreBoard Player2ScoreBoard = new scoreBoard();
    LeftNet.updateSetup(PongTable.Height,0,0,0,0,0,0,0,0,0,0);
    RightNet.updateSetup(PongTable.Height,0,0,0,0,0,0,0,0,0,0);
   PongTable.updateSetup(appHeight*1/10,appHeight*9/10,appWidth*1/2,0,0,0,0,0,0,0,0);
