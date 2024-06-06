@@ -3,6 +3,7 @@ class balls extends circles {
   float TableTop,TableBottom,TableMiddle;
   float LeftPaddleTop,LeftPaddleBottom,RightPaddleTop,RightPaddleBottom;
   float PongTableLeft, PongTableRight;
+  int timer;
   balls(float Xposition, float Yposition, float Width, float Height, color Colour) {
     super(Xposition,Yposition,Width,Height,Colour);
   }//end balls
@@ -16,10 +17,27 @@ class balls extends circles {
       move(); 
     } else if ( Xposition<=LeftEdge ) { 
       Xposition = PongTableLeft+Width;
+      if(BallStop == false) timer = 0;
       BallStop=true;
     } else if ( Xposition>=RightEdge ) {
       Xposition = PongTableRight-Width; 
+      if(BallStop == false) timer = 0;
       BallStop=true;
+      
+    }
+    println(timer);
+    if (BallStop == true && timer < 100) {
+      
+      if(timer == 99) {
+        println("reset");
+      Xposition = displayWidth/2;
+      Yposition = displayHeight/2;
+      Xmovement=xdirection();
+   Ymovement=ydirection();
+      BallStop = false;
+      }
+      
+      timer+=1;
     }
   }//end draw
   //
