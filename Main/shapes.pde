@@ -4,6 +4,7 @@ abstract class shapes {
   color Colour;
   float XMovement,YMovement;
   float LeftEdge,RightEdge;
+  float CenterlineY_Top,CenterlineY_Bottom,CenterlineX;
   boolean BallStop;
   shapes(float Xposition, float Yposition, float Width, float Height, color Colour) {
     this.Xposition = Xposition;

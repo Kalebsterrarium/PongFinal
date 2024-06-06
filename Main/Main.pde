@@ -25,13 +25,14 @@ void setup() {
    Shape.add(LeftPaddle);
    Shape.add(RightPaddle);
    Shape.add(PongBall);
-   //println(Shape[4].YMovement);
+   println(Shape.get(4).YMovement);
 }//end setup
 //
 void draw() {
   for ( shapes s : Shape) {
     s.draw();
   }
+   
 }//end draw
 //
 void mousePressed() {

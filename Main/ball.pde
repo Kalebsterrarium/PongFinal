@@ -9,10 +9,14 @@ class balls extends circles {
   }//end balls
   
   void draw() {
+    LeftPaddleTop = Shape.get(3).Yposition;
+    LeftPaddleBottom = (Shape.get(3).Yposition + Shape.get(3).Height);
+    RightPaddleTop = Shape.get(4).Yposition;
+    RightPaddleBottom = (Shape.get(4).Yposition + Shape.get(4).Height);
     fill(Colour);
     ellipse(Xposition,Yposition,Width,Height);
-    println(RightPaddleTop);
     
+   
    if ( BallStop==false && ( Xposition>LeftEdge && Xposition<RightEdge ) ) { 
       move(); 
     } else if ( Xposition<=LeftEdge ) { 
