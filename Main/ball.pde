@@ -11,7 +11,7 @@ class balls extends circles {
   void draw() {
     fill(Colour);
     ellipse(Xposition,Yposition,Width,Height);
-    println(RightEdge);
+    println(RightPaddleTop);
     
    if ( BallStop==false && ( Xposition>LeftEdge && Xposition<RightEdge ) ) { 
       move(); 
