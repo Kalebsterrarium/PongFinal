@@ -13,4 +13,6 @@ abstract class rectangles extends shapes {
   abstract void keyPressed();
   //
    abstract void keyReleased();
+   //
+   abstract void mousePressed();
 }//end rectangles class

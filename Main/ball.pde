@@ -23,24 +23,29 @@ class balls extends circles {
       Xposition = PongTableLeft+Width;
       if(BallStop == false) timer = 0;
       BallStop=true;
+      Goal[0]=true;
     } else if ( Xposition>=RightEdge ) {
       Xposition = PongTableRight-Width; 
       if(BallStop == false) timer = 0;
       BallStop=true;
-      
+      Goal[1]=true;
     }
-    println(timer);
     if (BallStop == true && timer < 100) {
       Xposition = displayWidth/2;
       Yposition = displayHeight/2;
       Xmovement=0;
       Ymovement=0;
+      if ( timer != 0) {
+      for(int i=0;i<2;i++) {
+        Goal[i] = false;
+      }
+      }
       if(timer == 99) {
-        println("reset");
       
       Xmovement=xdirection();
    Ymovement=ydirection();
       BallStop = false;
+      
       }
       
       timer+=1;
@@ -134,4 +139,7 @@ class balls extends circles {
   //
   void keyReleased() {
   }//end keyReleased
+  //
+  void mousePressed() {
+  }//end mousePressed
 }//end ball class

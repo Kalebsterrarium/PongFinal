@@ -42,4 +42,7 @@ class Net extends rectangles {
   void keyPressed() {}
   //
   void keyReleased() {}
+  //
+  void mousePressed() {
+  }//end mousePressed
 }// end Net class

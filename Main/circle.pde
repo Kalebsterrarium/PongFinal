@@ -13,4 +13,6 @@ abstract class circles extends shapes {
   abstract void keyPressed();
   //
    abstract void keyReleased();
+   //
+   abstract void mousePressed();
 }//end circles class

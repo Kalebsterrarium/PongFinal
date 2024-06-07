@@ -73,4 +73,7 @@ class Paddles extends rectangles {
   if ( key=='w' || key=='W') Up[1]=false ;
   if ( key=='s' || key=='S') Down[1] = false ;
   }//end keyReleased
+  //
+  void mousePressed() {
+  }//end mousePressed
 }//end Paddles

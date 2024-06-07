@@ -30,4 +30,7 @@ class pongTable extends rectangles{
   void keyPressed() {}
   //
   void keyReleased() {}
+  //
+  void mousePressed() {
+  }//end mousePressed
 }//end pongTable class

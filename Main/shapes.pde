@@ -6,6 +6,7 @@ abstract class shapes {
   float LeftEdge,RightEdge;
   float CenterlineY_Top,CenterlineY_Bottom,CenterlineX;
   boolean BallStop;
+  boolean[] Goal = new boolean[2];
   shapes(float Xposition, float Yposition, float Width, float Height, color Colour) {
     this.Xposition = Xposition;
     this.Yposition = Yposition;
@@ -24,4 +25,6 @@ abstract class shapes {
   abstract void keyPressed();
   //
   abstract void keyReleased();
+  //
+  abstract void mousePressed();
 }//end shapes class
