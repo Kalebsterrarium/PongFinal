@@ -1,5 +1,6 @@
 //global variables
 ArrayList<shapes> Shape = new ArrayList<shapes>();
+boolean startgame = false;
 //
 void setup() {
   
@@ -28,6 +29,7 @@ void setup() {
   RightPaddle.updateSetup(PongTable.CenterlineX,4,PongTable.CenterlineY_Top,PongTable.CenterlineY_Bottom,0,0,0,0,0,0,0);
   PongBall.updateSetup(PongTable.CenterlineY_Top,PongTable.CenterlineY_Bottom,PongTable.CenterlineX,LeftPaddle.Yposition,(LeftPaddle.Yposition + LeftPaddle.Height),RightPaddle.Yposition,(RightPaddle.Yposition + RightPaddle.Height),(LeftNet.Xposition + LeftNet.Width + LeftPaddle.Width),(RightNet.Xposition - RightPaddle.Width),PongTable.Xposition,(PongTable.Xposition + PongTable.Width));
   Player1ScoreBoard.updateSetup(0,0,0,0,0,0,0,0,0,0,0);
+  Player2ScoreBoard.updateSetup(0,0,0,0,0,0,0,0,0,0,0);
   Shape.add(PongTable);//0
   Shape.add(LeftNet);//1
    Shape.add(RightNet);//2
@@ -40,15 +42,23 @@ void setup() {
 }//end setup
 //
 void draw() {
+  if(startgame == true) {
   for ( shapes s : Shape) {
     s.draw();
   }
-   
+  } else {
+   StartMenu();
+  }
 }//end draw
 //
 void mousePressed() {
    for ( shapes s : Shape) {
     s.mousePressed();
+  }
+  if (startgame==false) {
+    startgame = true;
+  } else {
+    startgame = false;
   }
 }//end mousepressed
 //
