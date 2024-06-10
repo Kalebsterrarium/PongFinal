@@ -6,7 +6,7 @@ void setup() {
   fullScreen();
   display();
    PFont font;
-      font = createFont("BernardMT-Condensed",20);
+      font = createFont("Curlz MT",20);
     textAlign(CENTER,CENTER);
     textFont(font,displayHeight);
   int ballDiameter = appWidth*1/64;

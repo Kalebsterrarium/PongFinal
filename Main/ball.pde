@@ -123,10 +123,20 @@ class balls extends circles {
     }
     
     if (Xposition < TableMiddle*1/2 && Xposition < LeftEdge+(Width*1/2) ) {
-      if ( Yposition > LeftPaddleTop && Yposition < LeftPaddleBottom ) Xmovement *= -1;
+      if ( Yposition > LeftPaddleTop && Yposition < LeftPaddleBottom ) {
+      
+      
+      
+      Xmovement *= -1;
+    Xposition = (Shape.get(3).Xposition + Shape.get(3).Width) + Width;
+  }
     }
     if (Xposition > TableMiddle*3/2 && Xposition > RightEdge-(Width*1/2)) {
-      if ( Yposition > RightPaddleTop && Yposition < RightPaddleBottom ) Xmovement *= -1;
+      if ( Yposition > RightPaddleTop && Yposition < RightPaddleBottom ) {
+        
+        Xmovement *= -1;
+        Xposition = (Shape.get(4).Xposition - Shape.get(4).Width) - Width;
+    }
     }
   }//end bounce
   //
