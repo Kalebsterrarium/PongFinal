@@ -4,6 +4,7 @@ boolean startgame = false;
 float PlayerX1,PlayerY1,PlayerWidth1,PlayerHeight1;
 float PlayerX2,PlayerY2,PlayerWidth2,PlayerHeight2;
 color Grosscolour1, Grosscolour2, PT1,PT2;
+float ReturnMenuX, ReturnMenuY,ReturnMenuWidth,ReturnMenuHeight;
 //
 void setup() {
   
@@ -16,6 +17,7 @@ void setup() {
   int ballDiameter = appWidth*1/64;
   color BackGround = color(#FFFF00);
   color netcolour = color(#0000FF);
+  //
   Grosscolour1 = color(#9B8859);
    Grosscolour2 = color(#9B8859);
    PT1 = color(#5A5A5A);
@@ -28,7 +30,11 @@ void setup() {
   PlayerHeight2=PlayerHeight1;
   PlayerX2=((appWidth*7)/10) - PlayerWidth2/2;
   PlayerY2=appHeight/2;
-  
+  ReturnMenuX=appWidth*0;
+  ReturnMenuY=appHeight*0;
+  ReturnMenuWidth=appWidth/15;
+  ReturnMenuHeight=appHeight/20;
+  //
   pongTable PongTable = new pongTable(appWidth*0,appHeight*1/10,appWidth,appHeight*8/10,BackGround);
    Net LeftNet = new Net(appWidth*0,appHeight*1/10,ballDiameter*2,appHeight*8/10, netcolour);
    Net RightNet = new Net(appWidth - LeftNet.Width,appHeight*1/10,ballDiameter*2,appHeight*8/10, netcolour);
@@ -62,6 +68,11 @@ void draw() {
   for ( shapes s : Shape) {
     s.draw();
   }
+  fill(#0000FF);
+  rect(ReturnMenuX, ReturnMenuY,ReturnMenuWidth,ReturnMenuHeight);
+  fill(#000000);
+  textSize(20);
+  text("Return to Menu",ReturnMenuX, ReturnMenuY,ReturnMenuWidth,ReturnMenuHeight);
   } else {
    StartMenu();
   }
@@ -79,7 +90,7 @@ void draw() {
      Grosscolour2 = color(#9B8859);
      PT2=color(#5A5A5A);
   }
-
+ 
 }//end draw
 //
 void mousePressed() {
@@ -97,7 +108,11 @@ void mousePressed() {
        if (startgame==false) {
     startgame = true;
   }
- 
+  }
+ if(mouseX>ReturnMenuX && mouseX<ReturnMenuX+ReturnMenuWidth && mouseY>ReturnMenuY && mouseY<ReturnMenuY+ReturnMenuHeight) {
+       if (startgame==true) {
+    startgame = false;
+  }
   } 
 }//end mousepressed
 //

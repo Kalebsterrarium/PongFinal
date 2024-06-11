@@ -16,4 +16,5 @@ void StartMenu() {
   text("Single Player",PlayerX1,PlayerY1,PlayerWidth1,PlayerHeight1);
   fill(PT2);
   text("2 Players",PlayerX2,PlayerY2,PlayerWidth2,PlayerHeight2);
+ 
 }//end StartMenu
