@@ -76,7 +76,7 @@ class balls extends circles {
      Xmovement+=xdirection();
    Ymovement+=ydirection();
    //
-   BallStop=false;
+   BallStop=true;
   }//end updateSetup
   //
  void move() {
