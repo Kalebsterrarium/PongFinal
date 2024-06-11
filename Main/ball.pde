@@ -128,14 +128,14 @@ class balls extends circles {
       
       
       Xmovement *= -1;
-    Xposition = (Shape.get(3).Xposition + Shape.get(3).Width) + Width;
+    Xposition = (Shape.get(3).Xposition + Shape.get(3).Width) + Width/2;
   }
     }
     if (Xposition > TableMiddle*3/2 && Xposition > RightEdge-(Width*1/2)) {
       if ( Yposition > RightPaddleTop && Yposition < RightPaddleBottom ) {
         
         Xmovement *= -1;
-        Xposition = (Shape.get(4).Xposition - Shape.get(4).Width) - Width;
+        Xposition = (Shape.get(4).Xposition - Shape.get(4).Width) ;
     }
     }
   }//end bounce
