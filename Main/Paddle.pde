@@ -74,12 +74,13 @@ class Paddles extends rectangles {
            //println( (appHeight/2 - (appWidth/64)*5/2) + "default position");
     if ( Shape.get(11).GameStart == true) {
       if (Xposition < PongTableMiddle && PaddleBottom <= TableBottom  && PaddleTop >= TableTop ) {
+        if(Shape.get(5).Xposition < PongTableMiddle) {
        if(Shape.get(5).Yposition > Yposition + Height/2) {
-         Yposition+=YMovement;
+         Yposition+=4.8;
        } else {
-         Yposition-=YMovement;
+         Yposition-=4.8;
        }
-        
+        }
        
         
       }
