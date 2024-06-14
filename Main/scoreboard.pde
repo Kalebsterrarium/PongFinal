@@ -49,7 +49,7 @@ class scoreBoard extends rectangles {
         score = str(scorecounter);
       }
     }
-    if ( Shape.get(10).GameStart == false) {
+    if ( Shape.get(10).GameStart == false && Shape.get(11).GameStart == false) {
       scorecounter =0;
       score = str(scorecounter);
     }

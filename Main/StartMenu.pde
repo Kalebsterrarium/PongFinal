@@ -5,7 +5,7 @@ class Startmenu extends rectangles {
   }//end circles
   //
   void draw() {
-    if(Shape.get(10).GameStart == false) {
+    if(Shape.get(10).GameStart == false && Shape.get(11).GameStart == false) {
     fill(Colour);
     rect(Xposition,Yposition,Width,Height);
     }

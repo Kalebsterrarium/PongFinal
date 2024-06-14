@@ -1,18 +1,18 @@
-class players2button extends rectangles {
+class players1button extends rectangles {
   
 color TextColour;
    
-    players2button(float Xposition, float Yposition, float Width, float Height, color Colour) {
+    players1button(float Xposition, float Yposition, float Width, float Height, color Colour) {
     super(Xposition,Yposition,Width,Height,Colour);
-  }//end players2button
+  }//end players1button
   //
   void draw() {
-    if(GameStart == false && Shape.get(11).GameStart == false) {
+    if(GameStart == false && Shape.get(10).GameStart == false) {
     fill(Colour);
     rect(Xposition,Yposition,Width,Height);
     textSize(60);
     fill(TextColour);
-    text("2 Players",Xposition,Yposition,Width,Height);
+    text("Single Player",Xposition,Yposition,Width,Height);
     
     
     if(mouseX>Xposition && mouseX<Xposition+Width && mouseY>Yposition && mouseY<Yposition+Height) {

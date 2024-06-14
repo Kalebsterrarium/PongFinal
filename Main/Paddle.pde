@@ -9,6 +9,9 @@ class Paddles extends rectangles {
   }
   //
   void draw() {
+     if(Shape.get(10).GameStart == false && Shape.get(11).GameStart == false) { 
+   Yposition=  appHeight/2 - (appWidth/64)*5/2;
+    }
     fill(Colour);
     rect(Xposition,Yposition,Width,Height);
     PaddleTop = Yposition;
@@ -59,6 +62,10 @@ class Paddles extends rectangles {
       }
     }
   }//end paddlemove
+  //
+  void PaddleAI() {
+    if ( Shape.get(11).GameStart == true);
+  }//end PaddleAI 
   //
   void keyPressed() {
   if ( key==CODED & keyCode==UP) Up[0]=true ;

@@ -14,11 +14,11 @@ class balls extends circles {
     RightPaddleTop = Shape.get(4).Yposition;
     RightPaddleBottom = (Shape.get(4).Yposition + Shape.get(4).Height);
     println(Shape.get(10).GameStart);
-    if(Shape.get(10).GameStart == false) { 
+    if(Shape.get(10).GameStart == false && Shape.get(11).GameStart == false) { 
      timer= 0;
      BallStop = true;
     }
-    if (Shape.get(10).GameStart== true) {
+    if (Shape.get(10).GameStart== true || Shape.get(11).GameStart== true  ) {
     fill(Colour);
     ellipse(Xposition,Yposition,Width,Height);
     

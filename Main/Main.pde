@@ -46,6 +46,7 @@ void setup() {
    Startmenu StartMenu = new Startmenu(appWidth*0,appHeight*0, appWidth, appHeight, color(#4A412A));
    Quit QuitButton = new Quit(float(appWidth*14/15),float(appHeight*0),float(appWidth/15),float(appHeight/20),color(#FF0000)); 
    players2button TwoPlayerButton = new players2button(((appWidth*7)/10) - appWidth/10,appHeight/2,((appWidth*2)/10),((appHeight*3)/10),color(#9B8859));
+   players1button SinglePlayerButton = new players1button(((appWidth*2)/10),appHeight/2,((appWidth*2)/10),((appHeight*3)/10),color(#9B8859));
    returnmenu ReturnMenu = new returnmenu(appWidth*0,appHeight*0,appWidth/15,appHeight/20,color(#0000FF));
    LeftNet.updateSetup(PongTable.Height,0,0,0,0,0,0,0,0,0,0);
    RightNet.updateSetup(PongTable.Height,0,0,0,0,0,0,0,0,0,0);
@@ -66,7 +67,8 @@ void setup() {
    Shape.add(StartMenu);//8
    Shape.add(QuitButton);//9
    Shape.add(TwoPlayerButton);//10
-   Shape.add(ReturnMenu);//11
+   Shape.add(SinglePlayerButton);//11
+   Shape.add(ReturnMenu);//12
 }//end setup
 //
 void draw() {
