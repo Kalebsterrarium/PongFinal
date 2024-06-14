@@ -5,7 +5,7 @@ abstract class shapes {
   float XMovement,YMovement;
   float LeftEdge,RightEdge;
   float CenterlineY_Top,CenterlineY_Bottom,CenterlineX;
-  boolean BallStop;
+  boolean BallStop, GameStart;
   boolean[] Goal = new boolean[2];
   shapes(float Xposition, float Yposition, float Width, float Height, color Colour) {
     this.Xposition = Xposition;

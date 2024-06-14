@@ -1,11 +1,11 @@
-class Startmenu extends rectangles {
+class returnmenu extends rectangles {
   
-    Startmenu(float Xposition, float Yposition, float Width, float Height, color Colour) {
+    returnmenu(float Xposition, float Yposition, float Width, float Height, color Colour) {
     super(Xposition,Yposition,Width,Height,Colour);
-  }//end circles
+  }//end returnmenu
   //
   void draw() {
-    if(Shape.get(10).GameStart == false) {
+    if(Shape.get(10).GameStart == true) {
     fill(Colour);
     rect(Xposition,Yposition,Width,Height);
     }
@@ -29,7 +29,12 @@ class Startmenu extends rectangles {
   }//end keyReleased
   //
   void mousePressed() {
-    
+    if(mouseX>Xposition && mouseX<Xposition+Width && mouseY>Yposition && mouseY<Yposition+Height) {
+       if (Shape.get(10).GameStart==true) {
+    Shape.get(10).GameStart = false;
+       }
+  
+  }
   }//end mousePressed
   
   
@@ -38,26 +43,4 @@ class Startmenu extends rectangles {
   
   
   
-}//end Startmenu class
-
-
-
-
-
-
-
-
-float MenuX,MenuY,MenuWidth,MenuHeight;
-
-void StartMenu() {
- 
-  fill(Grosscolour1);
-  rect(PlayerX1,PlayerY1,PlayerWidth1,PlayerHeight1);
-  fill(Grosscolour2);
-  rect(PlayerX2,PlayerY2,PlayerWidth2,PlayerHeight2);
-  textSize(60);
-  fill(PT1);
-  text("Single Player",PlayerX1,PlayerY1,PlayerWidth1,PlayerHeight1);
- 
- 
-}//end StartMenu
+}//end returnmenu class

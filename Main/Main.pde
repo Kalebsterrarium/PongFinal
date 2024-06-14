@@ -44,6 +44,9 @@ void setup() {
    scoreBoard Player1ScoreBoard = new scoreBoard(float(appWidth*0),float(appHeight*0),float(appWidth/2),((appHeight - PongTable.Height)/2),color(#F2F000));
    scoreBoard Player2ScoreBoard = new scoreBoard(float(appWidth/2),float(appHeight*0),float(appWidth/2),((appHeight - PongTable.Height)/2),color(#F2F000));
    Quit QuitButton = new Quit(float(appWidth*14/15),float(appHeight*0),float(appWidth/15),float(appHeight/20),color(#FF0000));
+   Startmenu StartMenu = new Startmenu(appWidth*0,appHeight*0, appWidth, appHeight, color(#4A412A));
+   players2button TwoPlayerButton = new players2button(((appWidth*7)/10) - appWidth/10,appHeight/2,((appWidth*2)/10),((appHeight*3)/10),color(#9B8859));
+   returnmenu ReturnMenu = new returnmenu(appWidth*0,appHeight*0,appWidth/15,appHeight/20,color(#0000FF));
    LeftNet.updateSetup(PongTable.Height,0,0,0,0,0,0,0,0,0,0);
    RightNet.updateSetup(PongTable.Height,0,0,0,0,0,0,0,0,0,0);
   PongTable.updateSetup(appHeight*1/10,appHeight*9/10,appWidth*1/2,0,0,0,0,0,0,0,0);
@@ -61,28 +64,22 @@ void setup() {
    Shape.add(Player1ScoreBoard);//6
     Shape.add(Player2ScoreBoard);//7
     Shape.add(QuitButton);//8
+    Shape.add(StartMenu);//9
+    Shape.add(TwoPlayerButton);//10
+    Shape.add(ReturnMenu);//11
 }//end setup
 //
 void draw() {
-  if(startgame == true) {
+  
   for ( shapes s : Shape) {
     s.draw();
   }
-  fill(#0000FF);
-  rect(ReturnMenuX, ReturnMenuY,ReturnMenuWidth,ReturnMenuHeight);
+  
   fill(#000000);
   textSize(20);
   text("Return to Menu",ReturnMenuX, ReturnMenuY,ReturnMenuWidth,ReturnMenuHeight);
-  } else {
-   StartMenu();
-  }
-  if(mouseX>PlayerX1 && mouseX<PlayerX1+PlayerWidth1 && mouseY>PlayerY1 && mouseY<PlayerY1+PlayerHeight1) {
-    Grosscolour1=color(#CEB577);
-   PT1= color(#000000);
-  } else {
-         Grosscolour1 = color(#9B8859);
-         PT1 = color(#5A5A5A);
-  } 
+
+  
   if(mouseX>PlayerX2 && mouseX<PlayerX2+PlayerWidth2 && mouseY>PlayerY2 && mouseY<PlayerY2+PlayerHeight2) {
        Grosscolour2=color(#CEB577);
        PT2= color(#000000);
@@ -98,22 +95,14 @@ void mousePressed() {
     s.mousePressed();
   }
   
-  if(mouseX>PlayerX1 && mouseX<PlayerX1+PlayerWidth1 && mouseY>PlayerY1 && mouseY<PlayerY1+PlayerHeight1) {
-/* if (startgame==false) {
-    startgame = true;
-  }
-  */
-  } 
-  if(mouseX>PlayerX2 && mouseX<PlayerX2+PlayerWidth2 && mouseY>PlayerY2 && mouseY<PlayerY2+PlayerHeight2) {
-       if (startgame==false) {
-    startgame = true;
-  }
-  }
- if(mouseX>ReturnMenuX && mouseX<ReturnMenuX+ReturnMenuWidth && mouseY>ReturnMenuY && mouseY<ReturnMenuY+ReturnMenuHeight) {
+  
+ 
+ /*if(mouseX>ReturnMenuX && mouseX<ReturnMenuX+ReturnMenuWidth && mouseY>ReturnMenuY && mouseY<ReturnMenuY+ReturnMenuHeight) {
        if (startgame==true) {
     startgame = false;
   }
   } 
+  */
 }//end mousepressed
 //
 void keyPressed() {
