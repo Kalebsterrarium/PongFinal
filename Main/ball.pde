@@ -13,7 +13,6 @@ class balls extends circles {
     LeftPaddleBottom = (Shape.get(3).Yposition + Shape.get(3).Height);
     RightPaddleTop = Shape.get(4).Yposition;
     RightPaddleBottom = (Shape.get(4).Yposition + Shape.get(4).Height);
-    println(Shape.get(10).GameStart);
     if(Shape.get(10).GameStart == false && Shape.get(11).GameStart == false) { 
      timer= 0;
      BallStop = true;

@@ -16,8 +16,9 @@ class Paddles extends rectangles {
     rect(Xposition,Yposition,Width,Height);
     PaddleTop = Yposition;
    PaddleBottom = Yposition + Height;
-  paddlemove();
    
+  paddlemove();
+   PaddleAI();
   }//end draw
   //
    color colours() {
@@ -48,6 +49,7 @@ class Paddles extends rectangles {
       }
       
     } else {
+      if(Shape.get(10).GameStart == true) {
        if(Up[1] == true) {
       Yposition-=YMovement;
       }
@@ -61,10 +63,29 @@ class Paddles extends rectangles {
         Yposition= TableBottom-Height;
       }
     }
+   }
   }//end paddlemove
   //
   void PaddleAI() {
-    if ( Shape.get(11).GameStart == true);
+     if(Xposition < PongTableMiddle) {
+       println(PaddleBottom + "paddlebottom");
+     }
+           println(TableBottom + "tableBottom");
+           //println( (appHeight/2 - (appWidth/64)*5/2) + "default position");
+    if ( Shape.get(11).GameStart == true) {
+      if (Xposition < PongTableMiddle && PaddleBottom <= TableBottom && Shape.get(5).Yposition < TableBottom - Height/2 && PaddleTop >= TableTop && Shape.get(5).Yposition > TableTop + Height/2) {
+        Yposition = Shape.get(5).Yposition - Height/2;
+        
+      }
+      if(PaddleBottom > TableBottom ) {
+           Yposition= TableBottom-Height;
+          
+        }
+        if(PaddleTop < TableTop ) {
+           Yposition= TableTop;
+          
+        }
+    }
   }//end PaddleAI 
   //
   void keyPressed() {
