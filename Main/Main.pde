@@ -43,8 +43,8 @@ void setup() {
    balls PongBall = new balls(float(appWidth/2),float(appHeight/2),ballDiameter,ballDiameter,color(#FF0000));
    scoreBoard Player1ScoreBoard = new scoreBoard(float(appWidth*0),float(appHeight*0),float(appWidth/2),((appHeight - PongTable.Height)/2),color(#F2F000));
    scoreBoard Player2ScoreBoard = new scoreBoard(float(appWidth/2),float(appHeight*0),float(appWidth/2),((appHeight - PongTable.Height)/2),color(#F2F000));
-   Quit QuitButton = new Quit(float(appWidth*14/15),float(appHeight*0),float(appWidth/15),float(appHeight/20),color(#FF0000));
    Startmenu StartMenu = new Startmenu(appWidth*0,appHeight*0, appWidth, appHeight, color(#4A412A));
+   Quit QuitButton = new Quit(float(appWidth*14/15),float(appHeight*0),float(appWidth/15),float(appHeight/20),color(#FF0000)); 
    players2button TwoPlayerButton = new players2button(((appWidth*7)/10) - appWidth/10,appHeight/2,((appWidth*2)/10),((appHeight*3)/10),color(#9B8859));
    returnmenu ReturnMenu = new returnmenu(appWidth*0,appHeight*0,appWidth/15,appHeight/20,color(#0000FF));
    LeftNet.updateSetup(PongTable.Height,0,0,0,0,0,0,0,0,0,0);
@@ -62,11 +62,11 @@ void setup() {
    Shape.add(RightPaddle);//4
    Shape.add(PongBall);//5
    Shape.add(Player1ScoreBoard);//6
-    Shape.add(Player2ScoreBoard);//7
-    Shape.add(QuitButton);//8
-    Shape.add(StartMenu);//9
-    Shape.add(TwoPlayerButton);//10
-    Shape.add(ReturnMenu);//11
+   Shape.add(Player2ScoreBoard);//7
+   Shape.add(StartMenu);//8
+   Shape.add(QuitButton);//9
+   Shape.add(TwoPlayerButton);//10
+   Shape.add(ReturnMenu);//11
 }//end setup
 //
 void draw() {
@@ -75,9 +75,7 @@ void draw() {
     s.draw();
   }
   
-  fill(#000000);
-  textSize(20);
-  text("Return to Menu",ReturnMenuX, ReturnMenuY,ReturnMenuWidth,ReturnMenuHeight);
+ 
 
   
   if(mouseX>PlayerX2 && mouseX<PlayerX2+PlayerWidth2 && mouseY>PlayerY2 && mouseY<PlayerY2+PlayerHeight2) {

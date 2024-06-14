@@ -1,4 +1,5 @@
 class returnmenu extends rectangles {
+  color TextColour;
   
     returnmenu(float Xposition, float Yposition, float Width, float Height, color Colour) {
     super(Xposition,Yposition,Width,Height,Colour);
@@ -8,6 +9,16 @@ class returnmenu extends rectangles {
     if(Shape.get(10).GameStart == true) {
     fill(Colour);
     rect(Xposition,Yposition,Width,Height);
+    textSize(20);
+    fill(TextColour);
+    text("Return to Menu",Xposition,Yposition,Width,Height);
+       if(mouseX>Xposition && mouseX<Xposition+Width && mouseY>Yposition && mouseY<Yposition+Height) {
+    Colour=color(#00A8FF);
+   TextColour= color(#000000);
+  } else {
+         Colour = color(#0000FF);
+         TextColour = color(#FFFF00);
+  }
     }
   }//end draw
   //
