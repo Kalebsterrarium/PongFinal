@@ -7,7 +7,7 @@ color TextColour;
   }//end players2button
   //
   void draw() {
-    if(GameStart == false && Shape.get(11).GameStart == false) {
+    if(GameStart == false && Shape.get(12).GameStart == false) {
     fill(Colour);
     rect(Xposition,Yposition,Width,Height);
     textSize(60);

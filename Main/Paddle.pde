@@ -9,7 +9,7 @@ class Paddles extends rectangles {
   }
   //
   void draw() {
-     if(Shape.get(10).GameStart == false && Shape.get(11).GameStart == false) { 
+     if(Shape.get(11).GameStart == false && Shape.get(12).GameStart == false) { 
    Yposition=  appHeight/2 - (appWidth/64)*5/2;
     }
     stroke(#b2006c);
@@ -52,7 +52,7 @@ class Paddles extends rectangles {
       }
       
     } else {
-      if(Shape.get(10).GameStart == true) {
+      if(Shape.get(11).GameStart == true) {
        if(Up[1] == true) {
       Yposition-=YMovement;
       }
@@ -75,7 +75,7 @@ class Paddles extends rectangles {
      }
            println(TableBottom + "tableBottom");
            //println( (appHeight/2 - (appWidth/64)*5/2) + "default position");
-    if ( Shape.get(11).GameStart == true) {
+    if ( Shape.get(12).GameStart == true) {
       if (Xposition < PongTableMiddle && PaddleBottom <= TableBottom  && PaddleTop >= TableTop ) {
         if(Shape.get(5).Xposition < PongTableMiddle) {
        if(Shape.get(5).Yposition > Yposition + Height/2) {

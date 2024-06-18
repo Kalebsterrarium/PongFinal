@@ -5,9 +5,13 @@
   }//end MenuInteract
   //
    void draw() {
+     if ( Shape.get(11).GameStart == false && Shape.get(12).GameStart == false) {
      Xposition= mouseX;
      Yposition = mouseY;
+     fill(Colour);
      ellipse(Xposition,Yposition,Width,Height);
+     
+     }
    }//end draw
   //
     color colours() {

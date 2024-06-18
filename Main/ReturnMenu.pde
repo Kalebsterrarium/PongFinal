@@ -6,7 +6,7 @@ class returnmenu extends rectangles {
   }//end returnmenu
   //
   void draw() {
-    if(Shape.get(10).GameStart == true || Shape.get(11).GameStart==true) {
+    if(Shape.get(11).GameStart == true || Shape.get(12).GameStart==true) {
     fill(Colour);
     rect(Xposition,Yposition,Width,Height);
     textSize(20);
@@ -41,11 +41,11 @@ class returnmenu extends rectangles {
   //
   void mousePressed() {
     if(mouseX>Xposition && mouseX<Xposition+Width && mouseY>Yposition && mouseY<Yposition+Height) {
-       if (Shape.get(10).GameStart==true) {
-    Shape.get(10).GameStart = false;
-       }
-   if (Shape.get(11).GameStart==true) {
+       if (Shape.get(11).GameStart==true) {
     Shape.get(11).GameStart = false;
+       }
+   if (Shape.get(12).GameStart==true) {
+    Shape.get(12).GameStart = false;
        }
   
   }
