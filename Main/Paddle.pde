@@ -12,8 +12,11 @@ class Paddles extends rectangles {
      if(Shape.get(10).GameStart == false && Shape.get(11).GameStart == false) { 
    Yposition=  appHeight/2 - (appWidth/64)*5/2;
     }
+    stroke(#b2006c);
+    strokeWeight(3);
     fill(Colour);
     rect(Xposition,Yposition,Width,Height);
+    noStroke();
     PaddleTop = Yposition;
    PaddleBottom = Yposition + Height;
    
