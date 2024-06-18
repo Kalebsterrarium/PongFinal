@@ -48,6 +48,7 @@ void setup() {
    players2button TwoPlayerButton = new players2button(((appWidth*7)/10) - appWidth/10,appHeight/2,((appWidth*2)/10),((appHeight*3)/10),color(#9B8859));
    players1button SinglePlayerButton = new players1button(((appWidth*2)/10),appHeight/2,((appWidth*2)/10),((appHeight*3)/10),color(#9B8859));
    returnmenu ReturnMenu = new returnmenu(appWidth*0,appHeight*0,appWidth/15,appHeight/20,color(#0000FF));
+   MenuInteract Interaction = new MenuInteract(mouseX,mouseY,ballDiameter,ballDiameter,color(#000000));
    LeftNet.updateSetup(PongTable.Height,0,0,0,0,0,0,0,0,0,0);
    RightNet.updateSetup(PongTable.Height,0,0,0,0,0,0,0,0,0,0);
   PongTable.updateSetup(appHeight*1/10,appHeight*9/10,appWidth*1/2,0,0,0,0,0,0,0,0);
@@ -65,10 +66,11 @@ void setup() {
    Shape.add(Player1ScoreBoard);//6
    Shape.add(Player2ScoreBoard);//7
    Shape.add(StartMenu);//8
-   Shape.add(QuitButton);//9
-   Shape.add(TwoPlayerButton);//10
-   Shape.add(SinglePlayerButton);//11
-   Shape.add(ReturnMenu);//12
+   Shape.add(Interaction);//9
+   Shape.add(QuitButton);//10
+   Shape.add(TwoPlayerButton);//10-11
+   Shape.add(SinglePlayerButton);//11-12
+   Shape.add(ReturnMenu);//13
 }//end setup
 //
 void draw() {
