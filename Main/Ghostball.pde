@@ -9,15 +9,10 @@ class ghostball extends circles {
     Xposition = Shape.get(5).Xposition;
     Yposition = displayHeight - Shape.get(5).Yposition;
     
-     if (Shape.get(11).GameStart== true || Shape.get(12).GameStart== true && Shape.get(15).GameStart == true && GameStart == true) { 
+     if (Shape.get(11).GameStart== true || Shape.get(12).GameStart== true ) { 
     fill(Shape.get(5).Colour,170);
     ellipse(Xposition,Yposition,Width,Height);
-    timer-=0.5;
-    if(timer <= 0 ) {
-      
-      GameStart = false;
-    Shape.get(15).GameStart=false;
-  }
+   
       
      }
   }//end draw
