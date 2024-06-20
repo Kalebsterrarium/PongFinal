@@ -70,11 +70,8 @@ class Paddles extends rectangles {
   }//end paddlemove
   //
   void PaddleAI() {
-     if(Xposition < PongTableMiddle) {
-       println(PaddleBottom + "paddlebottom");
-     }
-           println(TableBottom + "tableBottom");
-           //println( (appHeight/2 - (appWidth/64)*5/2) + "default position");
+     
+          
     if ( Shape.get(12).GameStart == true) {
       if (Xposition < PongTableMiddle && PaddleBottom <= TableBottom  && PaddleTop >= TableTop ) {
         if(Shape.get(5).Xposition < PongTableMiddle) {

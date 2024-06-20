@@ -1,26 +1,60 @@
  class MenuInteract extends circles {
   float[] disapearingX = new float[15];
   float[] disapearingY = new float[15];
-  int number =0;
+  color Fading;
+  int[][] transparency = new int[15][15];
+  int[] shapeintensity = new int[15];
+  int number =-1;
   MenuInteract(float Xposition, float Yposition, float Width, float Height, color Colour) {
     super(Xposition,Yposition,Width,Height,Colour);
+    for (int i=0;i<15;i++) {
+    shapeintensity[i] =15-i;
+     }
   }//end MenuInteract
   //
    void draw() {
      if ( Shape.get(11).GameStart == false && Shape.get(12).GameStart == false) {
-     Xposition= mouseX;
-     Yposition = mouseY;
+        number++;
      if(number <= 14) {
        disapearingX[number]=mouseX;
        disapearingY[number]=mouseY;
+      ;
+      for( int shapenumber=0;shapenumber<15;shapenumber++) {
+       for(int brightnesslevel=0; brightnesslevel<15;brightnesslevel++) {
+      transparency[shapenumber][brightnesslevel]= int(140*((14.0-brightnesslevel)/14));
+      
+       }
+      }
      } else if (number >= 14) {
        number =0;
      }
-     number++;
-     fill(Colour);
-     for(int i=0;i<14;i++) {
-     ellipse(disapearingX[i],disapearingY[i],Width,Height);
+     
+       for (int i=0;i<15;i++) {
+    println(shapeintensity[i] );
      }
+     
+     
+     
+     
+     for (int i=0;i<15;i++) {
+    shapeintensity[i]++;
+    if(shapeintensity[i]>=15) {
+      shapeintensity[i]=0;
+    }
+     }
+     
+     
+      colorMode(HSB);
+      //println(saturation(Colour));
+     for(int i=0;i<15;i++) {
+        Fading=color(hue(Colour),(saturation(Colour)),brightness(Colour));
+//println(saturation(Fading ));
+      
+       fill(Fading,transparency[i][shapeintensity[i]]);
+     ellipse(disapearingX[i],disapearingY[i],Width,Height);
+     delay(50);
+     }
+     colorMode(RGB);
      }
    }//end draw
   //
