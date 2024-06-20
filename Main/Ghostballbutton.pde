@@ -1,30 +1,30 @@
 class ghostballbutton extends rectangles {
  
-  float activatedX,activatedY,activatedWidth,activatedHeight;
+  float activatedX,activatedWidth,activatedY;
     ghostballbutton(float Xposition, float Yposition, float Width, float Height, color Colour) {
     super(Xposition,Yposition,Width,Height,Colour);
     activatedX = Xposition;
        activatedY= Yposition;
        activatedWidth = Width;
-       activatedHeight = 0;
+        
   }//end returnmenu
   //
   void draw() {
   
-     if (Shape.get(11).GameStart== true || Shape.get(12).GameStart== true  ) { 
+     if (Shape.get(11).GameStart== true && Shape.get(12).GameStart== false  ) { 
     fill(Colour);
     rect(Xposition,Yposition,Width,Height);
     fill(color(#FF0000),170);
-    rect(activatedX,activatedY,activatedWidth,activatedHeight);
+    rect(activatedX,activatedY,activatedWidth,YMovement);
     if (GameStart == true && Shape.get(16).GameStart == true) {
-      activatedHeight-= Height/400.0;
+      YMovement-= Height/400.0;
       if(Shape.get(16).timer <= 0) {
-        activatedHeight = Height;
+        YMovement = Height;
       }
       }
-      if(GameStart == true && Shape.get(16).GameStart == false && activatedHeight > 0) {
-        activatedHeight-=0.03;
-      } else if( activatedHeight <= 0) {
+      if(GameStart == true && Shape.get(16).GameStart == false && YMovement > 0) {
+        YMovement-=0.03;
+      } else if( YMovement <= 0) {
         GameStart =false;
       }
      }
@@ -51,8 +51,8 @@ class ghostballbutton extends rectangles {
   //
   void mousePressed() {
     if(mouseX>Xposition && mouseX<Xposition+Width && mouseY>Yposition && mouseY<Yposition+Height) {
-      if(GameStart == false && Shape.get(16).GameStart == false) {
-       activatedHeight = Height;
+      if(GameStart == false && Shape.get(16).GameStart == false && Shape.get(11).GameStart== true && Shape.get(12).GameStart== false ) {
+       YMovement = Height;
       GameStart = true;
       Shape.get(16).GameStart = true;
       Shape.get(16).timer = 200;

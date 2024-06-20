@@ -47,7 +47,9 @@ class returnmenu extends rectangles {
    if (Shape.get(12).GameStart==true) {
     Shape.get(12).GameStart = false;
        }
-  
+       Shape.get(16).GameStart =false;
+    Shape.get(15).GameStart =false;
+    Shape.get(15).YMovement = 0;
   }
   }//end mousePressed
   
