@@ -7,6 +7,7 @@ abstract class shapes {
   float CenterlineY_Top,CenterlineY_Bottom,CenterlineX;
   boolean BallStop, GameStart;
   boolean[] Goal = new boolean[2];
+  float timer;
   shapes(float Xposition, float Yposition, float Width, float Height, color Colour) {
     this.Xposition = Xposition;
     this.Yposition = Yposition;
