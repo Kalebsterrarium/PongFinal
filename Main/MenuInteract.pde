@@ -2,13 +2,13 @@
   float[] disapearingX = new float[15];
   float[] disapearingY = new float[15];
   color Fading;
-  int[][] transparency = new int[15][15];
+  int[] transparency = new int[15];
   int[] shapeintensity = new int[15];
   int number =-1;
   MenuInteract(float Xposition, float Yposition, float Width, float Height, color Colour) {
     super(Xposition,Yposition,Width,Height,Colour);
     for (int i=0;i<15;i++) {
-    shapeintensity[i] =15-i;
+    shapeintensity[i] =14-i;
      }
   }//end MenuInteract
   //
@@ -19,12 +19,12 @@
        disapearingX[number]=mouseX;
        disapearingY[number]=mouseY;
       ;
-      for( int shapenumber=0;shapenumber<15;shapenumber++) {
+     
        for(int brightnesslevel=0; brightnesslevel<15;brightnesslevel++) {
-      transparency[shapenumber][brightnesslevel]= int(140*((14.0-brightnesslevel)/14));
+      transparency[brightnesslevel]= int(255*((14.0-brightnesslevel)/14));
       
        }
-      }
+      
      } else if (number >= 14) {
        number =0;
      }
@@ -38,7 +38,7 @@
      
      for (int i=0;i<15;i++) {
     shapeintensity[i]++;
-    if(shapeintensity[i]>=15) {
+    if(shapeintensity[i]>14) {
       shapeintensity[i]=0;
     }
      }
@@ -50,9 +50,9 @@
         Fading=color(hue(Colour),(saturation(Colour)),brightness(Colour));
 //println(saturation(Fading ));
       
-       fill(Fading,transparency[i][shapeintensity[i]]);
+       fill(Fading,transparency[shapeintensity[i]]);
      ellipse(disapearingX[i],disapearingY[i],Width,Height);
-     delay(50);
+   
      }
      colorMode(RGB);
      }
