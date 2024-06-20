@@ -14,9 +14,18 @@ class ghostballbutton extends rectangles {
      if (Shape.get(11).GameStart== true || Shape.get(12).GameStart== true  ) { 
     fill(Colour);
     rect(Xposition,Yposition,Width,Height);
-    
+    fill(color(#FF0000),170);
+    rect(activatedX,activatedY,activatedWidth,activatedHeight);
     if (GameStart == true && Shape.get(16).GameStart == true) {
-      activatedHeight-= Height/200.0;
+      activatedHeight-= Height/400.0;
+      if(Shape.get(16).timer <= 0) {
+        activatedHeight = Height;
+      }
+      }
+      if(GameStart == true && Shape.get(16).GameStart == false && activatedHeight > 0) {
+        activatedHeight-=0.03;
+      } else if( activatedHeight <= 0) {
+        GameStart =false;
       }
      }
  
@@ -46,6 +55,7 @@ class ghostballbutton extends rectangles {
        activatedHeight = Height;
       GameStart = true;
       Shape.get(16).GameStart = true;
+      Shape.get(16).timer = 200;
       }
     }
   }//end mousePressed
