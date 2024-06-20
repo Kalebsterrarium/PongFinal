@@ -50,6 +50,8 @@ class returnmenu extends rectangles {
        Shape.get(16).GameStart =false;
     Shape.get(15).GameStart =false;
     Shape.get(15).YMovement = 0;
+      Shape.get(17).GameStart =false;
+    Shape.get(17).YMovement = 0;
   }
   }//end mousePressed
   

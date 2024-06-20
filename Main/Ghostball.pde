@@ -12,11 +12,17 @@ class ghostball extends circles {
      if (Shape.get(11).GameStart== true && Shape.get(12).GameStart== false && GameStart == true ) { 
     fill(Shape.get(5).Colour,170);
     ellipse(Xposition,Yposition,Width,Height);
+    
  if(timer >= 0)  {
    timer-=0.5;
  } else {
+   if(Shape.get(15).GameStart == true) {
  GameStart = false;
- 
+ Goal[0]=true;
+   } else if(Shape.get(17).GameStart == true) {
+     GameStart = false;
+     Goal[1]=true;
+   }
      }
       
      }

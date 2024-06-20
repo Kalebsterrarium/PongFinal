@@ -12,11 +12,31 @@ class ghostballbutton extends rectangles {
   void draw() {
   
      if (Shape.get(11).GameStart== true && Shape.get(12).GameStart== false  ) { 
-    fill(Colour);
+  
+    if (Xposition < displayWidth/2) {
+        fill(Colour);
     rect(Xposition,Yposition,Width,Height);
     fill(color(#FF0000),170);
     rect(activatedX,activatedY,activatedWidth,YMovement);
-    if (GameStart == true && Shape.get(16).GameStart == true) {
+    if (GameStart == true && Shape.get(16).GameStart == true && Shape.get(16).Goal[1] == false && Shape.get(16).Goal[0] == true ) {
+      YMovement-= Height/400.0;
+      if(Shape.get(16).timer <= 0) {
+        YMovement = Height;
+        Shape.get(16).Goal[0] = false;
+      }
+      }
+      if(GameStart == true && Shape.get(16).GameStart == false && YMovement > 0) {
+        YMovement-=0.03;
+      } else if( YMovement <= 0) {
+        GameStart =false;
+         Shape.get(16).Goal[1] = false;
+      }
+    } else {
+        fill(Colour);
+    rect(Xposition,Yposition,Width,Height);
+    fill(color(#FF0000),170);
+    rect(activatedX,activatedY,activatedWidth,YMovement);
+      if (GameStart == true && Shape.get(16).GameStart == true && Shape.get(16).Goal[0] == false  && Shape.get(16).Goal[1] == true) {
       YMovement-= Height/400.0;
       if(Shape.get(16).timer <= 0) {
         YMovement = Height;
@@ -27,6 +47,8 @@ class ghostballbutton extends rectangles {
       } else if( YMovement <= 0) {
         GameStart =false;
       }
+    }
+      
      }
  
   
@@ -51,12 +73,23 @@ class ghostballbutton extends rectangles {
   //
   void mousePressed() {
     if(mouseX>Xposition && mouseX<Xposition+Width && mouseY>Yposition && mouseY<Yposition+Height) {
-      if(GameStart == false && Shape.get(16).GameStart == false && Shape.get(11).GameStart== true && Shape.get(12).GameStart== false ) {
+      if( Shape.get(11).GameStart== true && Shape.get(12).GameStart== false) {
+      if(Xposition < displayWidth/2) {
+        if(GameStart == false && Shape.get(16).GameStart == false ) {
        YMovement = Height;
       GameStart = true;
       Shape.get(16).GameStart = true;
       Shape.get(16).timer = 200;
       }
+      } else {
+       if (GameStart == false && Shape.get(16).GameStart == false ) {
+         YMovement = Height;
+      GameStart = true;
+      Shape.get(16).GameStart = true;
+      Shape.get(16).timer = 200;
+       }
+      }
+    }
     }
   }//end mousePressed
   

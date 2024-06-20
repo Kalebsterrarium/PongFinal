@@ -51,6 +51,7 @@ void setup() {
    MenuInteract Interaction = new MenuInteract(mouseX,mouseY,ballDiameter/3,ballDiameter/3,color(#b2006c));
    abilityMenu AbilityMenu = new abilityMenu(appWidth*0,(PongTable.Yposition + PongTable.Height),appWidth,appHeight/10,color(#fe89d0));
      ghostballbutton GhostButton = new ghostballbutton(appWidth*0,(PongTable.Yposition + PongTable.Height) + (appHeight/10 - appHeight/12)/2,appWidth/12,appHeight/12,color(#0000FF));
+      ghostballbutton GhostButton2 = new ghostballbutton(appWidth - appWidth/12,(PongTable.Yposition + PongTable.Height) + (appHeight/10 - appHeight/12)/2,appWidth/12,appHeight/12,color(#0000FF));
      ghostball Ghost = new ghostball(float(appWidth/2),float(appHeight/2),ballDiameter,ballDiameter,color(#100009));
    LeftNet.updateSetup(PongTable.Height,0,0,0,0,0,0,0,0,0,0);
    RightNet.updateSetup(PongTable.Height,0,0,0,0,0,0,0,0,0,0);
@@ -77,6 +78,7 @@ void setup() {
    Shape.add(AbilityMenu);//14
    Shape.add(GhostButton);//15
    Shape.add(Ghost);//16
+   Shape.add(GhostButton2);//17
 }//end setup
 //
 void draw() {
