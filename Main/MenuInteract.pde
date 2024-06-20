@@ -29,9 +29,7 @@
        number =0;
      }
      
-       for (int i=0;i<15;i++) {
-    println(shapeintensity[i] );
-     }
+      
      
      
      

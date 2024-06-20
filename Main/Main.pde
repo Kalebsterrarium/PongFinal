@@ -49,7 +49,9 @@ void setup() {
    players1button SinglePlayerButton = new players1button(((appWidth*2)/10),appHeight/2,((appWidth*2)/10),((appHeight*3)/10),color(#9B8859));
    returnmenu ReturnMenu = new returnmenu(appWidth*0,appHeight*0,appWidth/15,appHeight/20,color(#0000FF));
    MenuInteract Interaction = new MenuInteract(mouseX,mouseY,ballDiameter/3,ballDiameter/3,color(#b2006c));
-   abilitymenu AbilityMenu = new abilitymenu(appWidth*0,(PongTable.Yposition + PongTable.Height),appWidth,appHeight/10,color(#fe89d0));
+   abilityMenu AbilityMenu = new abilityMenu(appWidth*0,(PongTable.Yposition + PongTable.Height),appWidth,appHeight/10,color(#fe89d0));
+     ghostballbutton GhostButton = new ghostballbutton(appWidth*0,(PongTable.Yposition + PongTable.Height) + (appHeight/10 - appHeight/12)/2,appWidth/12,appHeight/12,color(#0000FF));
+     ghostball Ghost = new ghostball(float(appWidth/2),float(appHeight/2),ballDiameter,ballDiameter,color(#100009));
    LeftNet.updateSetup(PongTable.Height,0,0,0,0,0,0,0,0,0,0);
    RightNet.updateSetup(PongTable.Height,0,0,0,0,0,0,0,0,0,0);
   PongTable.updateSetup(appHeight*1/10,appHeight*9/10,appWidth*1/2,0,0,0,0,0,0,0,0);
@@ -73,6 +75,8 @@ void setup() {
    Shape.add(SinglePlayerButton);//11-12
    Shape.add(ReturnMenu);//13
    Shape.add(AbilityMenu);//14
+   Shape.add(GhostButton);//15
+   Shape.add(Ghost);//16
 }//end setup
 //
 void draw() {

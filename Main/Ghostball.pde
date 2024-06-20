@@ -1,14 +1,17 @@
-class abilityMenu extends rectangles {
+class ghostball extends circles {
  
   
-    abilityMenu(float Xposition, float Yposition, float Width, float Height, color Colour) {
+    ghostball(float Xposition, float Yposition, float Width, float Height, color Colour) {
     super(Xposition,Yposition,Width,Height,Colour);
   }//end returnmenu
   //
   void draw() {
-     if (Shape.get(11).GameStart== true || Shape.get(12).GameStart== true  ) { 
-    fill(Colour);
-    rect(Xposition,Yposition,Width,Height);
+    Xposition = Shape.get(5).Xposition;
+    Yposition = displayHeight - Shape.get(5).Yposition;
+    
+     if (Shape.get(11).GameStart== true || Shape.get(12).GameStart== true && Shape.get(15).GameStart == true  ) { 
+    fill(Shape.get(5).Colour,50);
+    ellipse(Xposition,Yposition,Width,Height);
      }
   }//end draw
   //
