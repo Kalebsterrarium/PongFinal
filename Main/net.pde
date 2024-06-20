@@ -1,7 +1,7 @@
 class Net extends rectangles {
    float lineX1,lineY1,lineX2,lineY2;
     float PongTableHeight;
-    color TableColour =color(#FFFF00);
+    color TableColour =color(#fe89d0);
   Net(float Xposition, float Yposition, float Width, float Height, color Colour) {
      super(Xposition,Yposition,Width,Height,Colour);    
   }//end Net 
